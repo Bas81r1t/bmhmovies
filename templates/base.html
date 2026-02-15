@@ -7,19 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Basharat Movies Hub</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="{% static 'images/icon.png' %}">
     <link rel="apple-touch-icon" sizes="192x192" href="{% static 'images/icon.png' %}">
     <link rel="apple-touch-icon" sizes="512x512" href="{% static 'images/icon.png' %}">
     
-    <!-- new line install ke liye img -->
     <link rel="manifest" href="{% static 'manifest.json' %}">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     
     <style>
         /* --- General Layout & Scrolling CSS --- */
@@ -122,64 +120,99 @@
         }
 
          /* --- Pagination Custom Styles --- */
-.pagination {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
+        .pagination {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
 
-.page-item .page-link {
-    /* Background and Border for Default/Disabled Buttons */
-    background-color: #2e3032; /* Dark background */
-    border: 1px solid #4a4d50; /* Darker border */
-    color: #ffffff; /* White text */
-    margin: 0 4px; /* Space between buttons */
-    border-radius: 8px !important; /* Rounded corners */
-    transition: all 0.2s ease;
-    min-width: 40px; /* Minimum width for number buttons */
-    text-align: center;
-}
+        .page-item .page-link {
+            /* Background and Border for Default/Disabled Buttons */
+            background-color: #2e3032; /* Dark background */
+            border: 1px solid #4a4d50; /* Darker border */
+            color: #ffffff; /* White text */
+            margin: 0 4px; /* Space between buttons */
+            border-radius: 8px !important; /* Rounded corners */
+            transition: all 0.2s ease;
+            min-width: 40px; /* Minimum width for number buttons */
+            text-align: center;
+        }
 
-/* Hover/Focus State */
-.page-item .page-link:hover,
-.page-item .page-link:focus {
-    background-color: #4a4d50; /* Slightly lighter dark on hover */
-    color: #ffffff;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Subtle white glow */
-    transform: scale(1.05);
-}
+        /* Hover/Focus State */
+        .page-item .page-link:hover,
+        .page-item .page-link:focus {
+            background-color: #4a4d50; /* Slightly lighter dark on hover */
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Subtle white glow */
+            transform: scale(1.05);
+        }
 
-/* Disabled State */
-.page-item.disabled .page-link {
-    opacity: 0.5; /* Fade out disabled buttons */
-    pointer-events: none; /* Disable click */
-}
+        /* Disabled State */
+        .page-item.disabled .page-link {
+            opacity: 0.5; /* Fade out disabled buttons */
+            pointer-events: none; /* Disable click */
+        }
 
-/* Active State (The current page button) */
-.page-item.active .page-link {
-    background-color: #e50914 !important; /* Netflix Red or your preferred accent color */
-    border-color: #ff3333 !important; /* Brighter red border */
-    color: white !important;
-    font-weight: bold;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Strong red glow */
-    transform: scale(1.05); /* Slightly bigger active button */
-}
+        /* Active State (The current page button) */
+        .page-item.active .page-link {
+            background-color: #e50914 !important; /* Netflix Red or your preferred accent color */
+            border-color: #ff3333 !important; /* Brighter red border */
+            color: white !important;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Strong red glow */
+            transform: scale(1.05); /* Slightly bigger active button */
+        }
 
-/* Active state for span (if using Bootstrap default active structure) */
-.page-item.active span.page-link {
-    background-color: #e50914 !important;
-    border-color: #ff3333 !important;
-    color: white !important;
-}
+        /* Active state for span (if using Bootstrap default active structure) */
+        .page-item.active span.page-link {
+            background-color: #e50914 !important;
+            border-color: #ff3333 !important;
+            color: white !important;
+        }
+
+        /* 👇 --- BMH Movies Logo Style YAHAN HAI --- 👇 */
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none; 
+        }
+
+        .bmh-logo-wrapper {
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            font-size: 1.6rem; 
+            line-height: 1; 
+            display: flex; 
+            align-items: center;
+        }
+
+        .bmh-box {
+            background-color: #FFD700; 
+            color: #000000; 
+            padding: 4px 6px; 
+            border-radius: 2px; 
+            margin-right: 2px; 
+        }
+
+        .movies-text {
+            color: #FFFFFF; 
+            padding: 4px 2px; 
+        }
+        /* 👆 --- Logo Style End --- 👆 */
 
     </style>
 </head>
 <body>
 
     <div id="lenis-wrapper">
-        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">🎬 𝔅𝔞𝔰𝔥𝔞𝔯𝔞𝔱 𝔐𝔬𝔳𝔦𝔢𝔰 ℌ𝔲𝔟</a>
+                <a class="navbar-brand" href="/">
+                  <span class="bmh-logo-wrapper ms-2">
+                        <span class="bmh-box">BMH</span><span class="movies-text">Movies</span>
+                    </span>
+                </a>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -197,7 +230,7 @@
                             </li>
                         {% else %}
                             <li class="nav-item">
-                                <a class="nav-link" href="/admin/login/">Admin Login</a>
+                                <a class="nav-link" href="/admin/login/"></a>
                             </li>
                         {% endif %}
                     </ul>
@@ -221,22 +254,17 @@
         </main>
 
         <footer>
-            <p class="mb-1">© 2025 Basharat Movies Hub | Made ❤️ by Basharat</p>
+            <p class="mb-1">© 2026 Basharat Movies Hub | Made ❤️ by Basharat</p>
         </footer>
 
-        <!-- <button id="install-btn">Install App</button> -->
-    </div>
+        </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Lenis Library CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.35/dist/lenis.min.js"></script>
 
-    <!-- PWA Install Tracker JS -->
     <script src="{% static 'js/install_tracker.js' %}"></script>
 
-    <!-- Custom JS -->
     <script src="{% static 'js/index.js' %}"></script>
 
 </body>
